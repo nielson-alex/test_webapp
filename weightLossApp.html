@@ -1,17 +1,85 @@
 <!DOCTYPE HTML>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
 <body>
 	<h1>Calorie Counter</h1>
 	<input type="checkbox" id="userNameAlex">Alex</input> 
 	<input type="checkbox" id="userNameMatt">Matt</input>
 	<input type="checkbox" id="userNameKaren">Karen</input>	<br>
-	<input class="meals" type="text" value="Meal 1" /> <input class="calories" type="text" value="Calories" /> <br>
-	<input class="meals" type="text" value="Meal 2" /> <input class="calories" type="text" value="Calories" /> <br>
-	<input class="meals" type="text" value="Meal 3" /> <input class="calories" type="text" value="Calories" /> <br>
-	<input class="meals" type="text" value="Meal 4" /> <input class="calories" type="text" value="Calories" /> <br>
-	<input class="meals" type="text" value="Meal 5" /> <input class="calories" type="text" value="Calories" /> <br>
-	<input class="meals" type="text" value="Meal 6" /> <input class="calories" type="text" value="Calories" "/> <input type="button" value="Save" onclick="saveCal()" /> <br>
-	<input type="button" onclick="submit()" value="Submit" />
+	<input type="button" onclick="localStorage.clear()" value="Clear Local Storage" /> <br>
 
+	<div>
+		<h1>Sunday</h1>
+		
+		<input class="meals sundayMeals" type="text" value="Meal 1" /> <input class="calories sundayCalories" type="text" value="Calories" /> <br>
+		<input class="meals sundayMeals" type="text" value="Meal 2" /> <input class="calories sundayCalories" type="text" value="Calories" /> <br>
+		<input class="meals sundayMeals" type="text" value="Meal 3" /> <input class="calories sundayCalories" type="text" value="Calories" /> <br>
+		<input class="meals sundayMeals" type="text" value="Meal 4" /> <input class="calories sundayCalories" type="text" value="Calories" /> <br>
+		<input class="meals sundayMeals" type="text" value="Meal 5" /> <input class="calories sundayCalories" type="text" value="Calories" /> <br>
+		<input class="meals sundayMeals" type="text" value="Meal 6" /> <input class="calories sundayCalories" type="text" value="Calories" "/> <input type="button" class="saveCal" value="Save" onclick="saveSundayCal()" /> <br>
+		<input type="button" value="See Sunday Info" onclick="seeSundayCal()" />
+	</div>
+	<div>
+		<h1>Monday</h1>
+		<input class="meals mondayMeals" type="text" value="Meal 1" /> <input class="calories mondayCalories" type="text" value="Calories" /> <br>
+		<input class="meals mondayMeals" type="text" value="Meal 2" /> <input class="calories mondayCalories" type="text" value="Calories" /> <br>
+		<input class="meals mondayMeals" type="text" value="Meal 3" /> <input class="calories mondayCalories" type="text" value="Calories" /> <br>
+		<input class="meals mondayMeals" type="text" value="Meal 4" /> <input class="calories mondayCalories" type="text" value="Calories" /> <br>
+		<input class="meals mondayMeals" type="text" value="Meal 5" /> <input class="calories mondayCalories" type="text" value="Calories" /> <br>
+		<input class="meals mondayMeals" type="text" value="Meal 6" /> <input class="calories mondayCalories" type="text" value="Calories" "/> <input type="button" class="saveCal" value="Save" onclick="saveMondayCal()" /> <br>
+		<input type="button" onclick="seeMondayCal()" value="See Monday Info" />
+	</div>
+	<div>
+		<h1>Tuesday</h1>
+		<input class="meals tuesdayMeals" type="text" value="Meal 1" /> <input class="calories tuesdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals tuesdayMeals" type="text" value="Meal 2" /> <input class="calories tuesdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals  tuesdayMeals" type="text" value="Meal 3" /> <input class="calories tuesdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals tuesdayMeals" type="text" value="Meal 4" /> <input class="calories tuesdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals tuesdayMeals" type="text" value="Meal 5" /> <input class="calories tuesdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals tuesdayMeals" type="text" value="Meal 6" /> <input class="calories tuesdayCalories" type="text" value="Calories" "/> <input type="button" class="saveCal" value="Save" onclick="saveTuesdayCal()" /> <br>
+		<input type="button" onclick="seeTuesdayCal()" value="See Tuesday Info" />
+	</div><br>
+	<div>
+		<h1>Wednesday</h1>
+		<input class="meals wednesdayMeals" type="text" value="Meal 1" /> <input class="calories wednesdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals wednesdayMeals" type="text" value="Meal 2" /> <input class="calories wednesdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals wednesdayMeals" type="text" value="Meal 3" /> <input class="calories wednesdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals wednesdayMeals" type="text" value="Meal 4" /> <input class="calories wednesdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals wednesdayMeals" type="text" value="Meal 5" /> <input class="calories wednesdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals wednesdayMeals" type="text" value="Meal 6" /> <input class="calories wednesdayCalories" type="text" value="Calories" "/> <input type="button" class="saveCal" value="Save" onclick="saveWednesdayCal()" /> <br>
+		<input type="button" onclick="seeWednesdayCal()" value="See Wednesday Info" />
+	</div>
+	<div>
+		<h1>Thursday</h1>
+		<input class="meals thursdayMeals" type="text" value="Meal 1" /> <input class="calories thursdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals thursdayMeals" type="text" value="Meal 2" /> <input class="calories thursdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals thursdayMeals" type="text" value="Meal 3" /> <input class="calories thursdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals thursdayMeals" type="text" value="Meal 4" /> <input class="calories thursdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals thursdayMeals" type="text" value="Meal 5" /> <input class="calories thursdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals thursdayMeals" type="text" value="Meal 6" /> <input class="calories thursdayCalories" type="text" value="Calories" "/> <input type="button" class="saveCal" value="Save" onclick="saveThursdayCal()" /> <br>
+		<input type="button" onclick="seeThursdayCal()" value="See Thursday Info" />
+	</div>
+	<div>
+		<h1>Friday</h1>
+		<input class="meals fridayMeals" type="text" value="Meal 1" /> <input class="calories fridayCalories" type="text" value="Calories" /> <br>
+		<input class="meals fridayMeals" type="text" value="Meal 2" /> <input class="calories fridayCalories" type="text" value="Calories" /> <br>
+		<input class="meals fridayMeals" type="text" value="Meal 3" /> <input class="calories fridayCalories" type="text" value="Calories" /> <br>
+		<input class="meals fridayMeals" type="text" value="Meal 4" /> <input class="calories fridayCalories" type="text" value="Calories" /> <br>
+		<input class="meals fridayMeals" type="text" value="Meal 5" /> <input class="calories fridayCalories" type="text" value="Calories" /> <br>
+		<input class="meals fridayMeals" type="text" value="Meal 6" /> <input class="calories fridayCalories" type="text" value="Calories" "/> <input type="button" class="saveCal" value="Save" onclick="saveFridayCal()" /> <br>
+		<input type="button" onclick="seeFridayCal()" value="See Friday Info" />
+	</div><br>
+	<div>
+		<h1>Saturday</h1>
+		<input class="meals saturdayMeals" type="text" value="Meal 1" /> <input class="calories saturdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals saturdayMeals" type="text" value="Meal 2" /> <input class="calories saturdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals saturdayMeals" type="text" value="Meal 3" /> <input class="calories saturdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals saturdayMeals" type="text" value="Meal 4" /> <input class="calories saturdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals saturdayMeals" type="text" value="Meal 5" /> <input class="calories saturdayCalories" type="text" value="Calories" /> <br>
+		<input class="meals saturdayMeals" type="text" value="Meal 6" /> <input class="calories saturdayCalories" type="text" value="Calories" "/> <input type="button" class="saveCal" value="Save" onclick="saveSaturdayCal()" /> <br>
+		<input type="button" onclick="seeSaturdayCal()" value="See Saturday Info" />
+	</div>
 	<script src="app.js"></script>
 </body>
 </HTML>
